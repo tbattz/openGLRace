@@ -1,6 +1,7 @@
 echo off
 CALL:echored "IMPORTANT: REMOVE CYGWIN FROM PATH BEFORE INSTALLING."
 :: Change to download directory
+cd ..
 SET ORIGINAL=%CD%
 cd %UserProfile%\Downloads\
 
@@ -90,7 +91,8 @@ call:ECHOGREEN "End of Vars."
 rundll32 sysdm.cpl,EditEnvironmentVariables
 
 :: Return to original directory
-cd %ORIGINAL%
+cd %ORIGINAL%\Installers
+CALL:echored "IMPORTANT: Now open a NEW command prompt and run installDependiciesWindowsPart2.bat."
 
 :: Functions
 :ECHORED

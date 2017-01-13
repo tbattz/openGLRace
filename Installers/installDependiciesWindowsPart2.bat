@@ -3,6 +3,7 @@
 echo off
 CALL:echored "IMPORTANT: REMOVE CYGWIN FROM PATH BEFORE INSTALLING."
 :: Change to download directory
+cd ..
 SET ORIGINAL=%CD%
 cd %UserProfile%\Downloads\
 
@@ -80,7 +81,7 @@ if exist "%UserProfile%\Downloads\SOIL\" (
 ) else (
 	echo Downloading SOIL.
 	"%ProgramFiles(x86)%\GnuWin32\bin\wget.exe" --no-check-certificate http://www.lonesock.net/files/soil.zip
-	start /w "" "%ProgramFiles%\Git\git-bash.exe" -i %ORIGINAL%\unzipSOIL.sh
+	start /w "" "%ProgramFiles%\Git\git-bash.exe" -i %ORIGINAL%\Installers\unzipSOIL.sh
 )
 cd SOIL\Simple OpenGL Image Library\projects\makefile
 mkdir obj
@@ -97,7 +98,7 @@ if exist "%UserProfile%\Downloads\ft271.zip" (
 ) else (
 	echo Downloading FreeType.
 	"%ProgramFiles(x86)%\GnuWin32\bin\wget.exe" --no-check-certificate http://internode.dl.sourceforge.net/project/freetype/freetype2/2.7.1/ft271.zip
-	start /w "" "%ProgramFiles%\Git\git-bash.exe" -i %ORIGINAL%\unzipFreetype.sh
+	start /w "" "%ProgramFiles%\Git\git-bash.exe" -i %ORIGINAL%\Installers\unzipFreetype.sh
 )
 cd freetype\freetype-2.7.1
 make
