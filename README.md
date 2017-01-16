@@ -218,12 +218,12 @@ Firstly, ensure that cywin is not in your path.
 A CMakeLists.txt file is included for compiling with Cmake. This should work for both Debian and Windows based systems. Navigate to the build directory and remove any old CMakeFiles
 ```
 cd build
-rm -r CMakeFiles/
+rm -r *
 ```
 Run cmake to generate a makefile.
 ```
-cmake ..						# Linux
-cmake -G "MinGW Makefiles" ..	# Windows
+cmake ../src/						# Linux
+cmake -G "MinGW Makefiles" ../src/	# Windows
 ```
 Compile the program.
 ```
@@ -236,9 +236,9 @@ To generate an Eclipse project, from the root directory,
 ```
 cd build
 rm -r CMakeFiles/
-cmake -G Eclipse\ CDT4\ -\ Unix\ Makefiles  ..
+cmake -G "Eclipse CDT4 - Unix Makefiles" ../src
 ```
-Then import the project into Eclipse using File >> Import >> General >> Existing Projects into Workspace. Click next and set the root directory to <workspace>/openGLRace/build. Click Finish. The project can now be built with Eclipse using the 'all' Build Target. 
+Then import the project into Eclipse using File >> Import >> General >> Existing Projects into Workspace. Click next and set the root directory to <workspace>/openGLRace/build. Click Finish. The project can now be built with Eclipse using the 'all' Build Target. The source files will be inside the "[Source Directory]" and are linked to their actualy counterpats.
 
 # Models
 Rudimentary models are stored [here](https://drive.google.com/drive/folders/0B8WtiKHIU0VNV3l5aDEzdHhkV3c?usp=sharing). They should be placed in a Models folder at the top directory, parallel to src and Debug.
